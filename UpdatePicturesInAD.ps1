@@ -8,6 +8,7 @@ $log = "START: " + (Get-Date -UFormat "%d-%m-%Y %T") + "`r`n"
 Get-ADUser  -Filter "State -eq 'Danmark'" ´
             -SearchBase "OU=OU=xxxx" ´
             -Properties "mail", SamAccountName |
+#Kør igennem alle brugerne
 ForEach-Object -Process {
     #Tag emailen for brugeren, og find bogstaverne foran @
     #For eksempel: AbcDef@erst.dk bliver til AbcDef
@@ -53,10 +54,6 @@ ForEach-Object -Process {
         }
 
     }
-}
-
-#Kør igennem alle brugerne
-ForEach ($user in $users) {
 }
 
 #Skriv log til en log fil for dagens dato

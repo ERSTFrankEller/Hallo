@@ -5,7 +5,6 @@ $users = Get-ADUser -Filter "State -eq 'Danmark'" -SearchBase "OU=OU=xxxx" -Prop
 #Opret et log variable
 $log = "START: " + (Get-Date -UFormat "%d-%m-%Y %T") + "`r`n"
 
-#Kør igennem alle brugerne
 ForEach ($user in $users) {
 
     #Tag emailen for brugeren, og find bogstaverne foran @
